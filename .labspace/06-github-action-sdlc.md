@@ -14,7 +14,7 @@ When using DHI in your CI/CD pipeline, you should:
 
 Create a workflow file `.github/workflows/dhi-build.yml`:
 
-```
+```yaml
 name: Build with DHI
 
 on: [push]
