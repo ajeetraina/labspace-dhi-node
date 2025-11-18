@@ -1,6 +1,10 @@
 name: DHI Build with Scanning
 
-on: [push, pull_request]
+on:
+  push:
+    branches: [solution]  # ← Add solution
+  pull_request:
+    branches: [solution]  # ← Add solution
 
 env:
   IMAGE_NAME: demo-node-dhi
