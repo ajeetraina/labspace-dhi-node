@@ -2,10 +2,10 @@ name: DHI Full Production Pipeline
 
 on:
   push:
-    branches: [main]
+    branches: [solution]  # ← Only solution
   pull_request:
-    branches: [main]
-  workflow_dispatch:
+    branches: [solution]  # ← Only solution
+  workflow_dispatch:  # ← Keep this
 
 env:
   IMAGE_NAME: demo-node-dhi
