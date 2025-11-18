@@ -1,6 +1,11 @@
 name: DHI Build with Scanning
 
-on: [push, pull_request]
+on:
+  push:
+    branches: [solution]  # ← Only solution
+  pull_request:
+    branches: [solution]  # ← Only solution
+  workflow_dispatch:  # ← Add manual trigger
 
 env:
   IMAGE_NAME: demo-node-dhi
