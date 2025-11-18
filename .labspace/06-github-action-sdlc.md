@@ -14,7 +14,7 @@ When using DHI in your CI/CD pipeline, you should:
 
 Create a workflow file `.github/workflows/dhi-build.yml`:
 
-\`\`\`yaml
+```
 name: Build with DHI
 
 on: [push]
@@ -36,15 +36,17 @@ jobs:
           tags: $orgname$/demo-node-dhi:latest
           provenance: mode=max
           sbom: true
-\`\`\`
+```
 
 ## Try It Yourself
 
 1. Create the workflow file in your repository
 2. Update the Dockerfile to use DHI base:
-   \`\`\`dockerfile
+  
+   ```dockerfile
    FROM $$orgname$$/dhi-node:24.9.0-debian13
-   \`\`\`
+   ```
+
 3. Push to GitHub and watch the action run
 
 ## What Gets Added?
