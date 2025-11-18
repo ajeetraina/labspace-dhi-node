@@ -1,11 +1,30 @@
-FROM dockerdevrel/dhi-node:24.9.0-debian13 AS base
+# Stage 1: Build stage using -dev variant (has npm, shell, tools)
+FROM dockerdevrel/dhi-node:24.9.0-debian13-dev AS builder
 
 WORKDIR /app
+
+# Copy package files
 COPY package*.json ./
+
+# Install dependencies (npm is available in -dev variant)
 RUN npm ci --only=production
 
+# Copy application code
 COPY . .
 
+# Stage 2: Runtime stage using minimal variant (no shell, no npm)
+FROM dockerdevrel/dhi-node:24.9.0-debian13
+
+WORKDIR /app
+
+# Copy installed node_modules from builder
+COPY --from=builder /app/node_modules ./node_modules
+
+# Copy application code
+COPY --from=builder /app/package*.json ./
+COPY --from=builder /app/app.js ./
+
+# Runtime configuration
+EXPOSE 3000
 ENTRYPOINT ["node"]
 CMD ["app.js"]
-EXPOSE 3000
