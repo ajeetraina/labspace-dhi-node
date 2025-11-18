@@ -2,9 +2,9 @@ name: DHI Full Production Pipeline
 
 on:
   push:
-    branches: [main]
+    branches: [solution]
   pull_request:
-    branches: [main]
+    branches: [solution]
   workflow_dispatch:
 
 env:
