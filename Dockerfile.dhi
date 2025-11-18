@@ -1,0 +1,11 @@
+FROM dockerdevrel/dhi-node:24.9.0-debian13 AS base
+
+WORKDIR /app
+COPY package*.json ./
+RUN npm ci --only=production
+
+COPY . .
+
+ENTRYPOINT ["node"]
+CMD ["app.js"]
+EXPOSE 3000
