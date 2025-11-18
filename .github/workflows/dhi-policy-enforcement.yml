@@ -2,9 +2,9 @@ name: DHI Policy Enforcement
 
 on:
   push:
-    branches: [main, develop]
+    branches: [solution]
   pull_request:
-    branches: [main]
+    branches: [solution]
 
 env:
   IMAGE_NAME: demo-node-dhi
