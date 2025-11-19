@@ -1,6 +1,8 @@
-title: Docker DHI Node Labspace 
+title: Docker DHI Node Labspace - Complete SDLC Security Demo
 description: |
-  A repository containing a Hello World Node.js application demonstrating Docker Hardened Images (DHI) migration and secure SDLC integration with GitHub Actions
+  A comprehensive hands-on demonstration of Docker Hardened Images (DHI) in a complete Software Development Lifecycle (SDLC). 
+  This repository shows how to secure your Node.js applications with DHI, implement security gates in GitHub Actions, 
+  and enforce policy compliance throughout the development pipeline.
 
 sections:
   - title: Introducing Docker Scout and Docker Hardened Images (DHI)
@@ -19,3 +21,5 @@ sections:
     contentPath: .labspace/07-policy-enforcement.md
   - title: Production SDLC Workflow                  
     contentPath: .labspace/08-production-sdlc.md
+  - title: Hands-On - Running the Workflows
+    contentPath: .labspace/09-hands-on-workflow-execution.md
